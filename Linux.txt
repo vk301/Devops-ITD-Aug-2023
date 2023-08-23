@@ -1,3 +1,62 @@
-pwd
-ls 
-touch 
+To practice - (install git or MobaXterm)
+
+Create a Linux machine in AWS cloud 
+
+1. Create an AWS account 
+2. wait for the account to get activated 
+3. Search for EC2 service -> Goto Instances -> Launch Instances 
+	a. Give a name to the machine (instance)
+	b. Choose the OS type (AMI type)
+	c. Create and save the Key Pair to login 
+4. Create an instance 
+
+In Linux commands are case-sensitive 
+
+A folder is called a Directory in Linux
+
+Know your current path/location 
+    pwd - present working directory 
+
+To list files and directories 
+     command: ls 
+     To list with details (long format): ls -l
+     To list with creation time sorted (recent at the top): ls -t
+     To list reverse order: ls -r
+     All the above together: ls -lrt (OR) ll
+       
+switch/change to a folder/Directory in Linux (change directory - cd)
+    command: cd  
+    Syntax: cd <path>/<location>
+    example: 1. To change to a Directory in the current location
+    		cd test 
+
+create a directory/folder in Linux (make directory - mkdir)
+    command: mkdir 
+    To create a directory: mkdir <directory_name>
+    		example: mkdir test
+    To create multiple directories: mkdir <directory_name> <directory_name1> <directory_name2> ..... <directory_name>
+    		note: directory names with space separated	
+    		example: mkdir test test1 test2 ...	
+
+Delete files/directories (rm)
+
+Use the rm command to delete files and directories. But rm cannot simply delete a directory. Use “rm -r” to delete a directory. In this case, it deletes both the folder and the files in it.
+     To remove/delete a file 	
+	rm file_name 
+     To remove/delete a Directory	
+	rm -r directory
+
+Linux path 
+  Always Linux path is separate with / 	
+   . -> current directory 
+   .. -> one step back / Previous one directory 
+   ../.. -> Previous two directory
+
+To create an empty file (touch)
+    if the file does not exist, the touch command will create an empty file.
+    If the file already exists, the touch command will alter the file timestamp to recent.
+	touch <file_name>
+To display/print the contents of files (cat)
+	cat command (short for “concatenate“) allows us to create single or multiple files, view contain
+	of a file, concatenate files, and redirect output in the terminal or files.
+		cat <file_name>
