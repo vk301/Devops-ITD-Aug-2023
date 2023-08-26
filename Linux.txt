@@ -117,3 +117,43 @@ uniq
 
 The uniq command accepts input from a text-based file and removes any repeated lines, only if they are adjacent to each other. That’s why it’s used in conjunction with sort to remove non-adjacent lines.
 sort file.txt | uniq
+
+
+ssh
+The ssh command is used to securely log into a remote machine and execute commands on that machine. The basic syntax of the command is “ssh user@host”, where the user is the username on the remote machine and the host is the ip address or DNS or hostname of the remote machine.
+example: ssh ubuntu@192.168.43.120
+
+Copy the file from one location to another (cp)
+    - cp command copies files and directories through the command line.
+
+    To copy to a different location
+        cp <source> <destination>    
+
+rename or move the file from one location to another (mv)
+    - mv command to move files and directory through the command line. 
+    - We can also use the mv command to rename a file/directory.
+    To rename a file/directory
+        mv old_filename new_filename
+        mv old_directory new_directory
+    To move to a different location (cut and paste)    
+        mv <source> <destination>
+
+Nslookup (Name Server Lookup) 
+
+nslookup is a useful command for getting information on the DNS (website address). It is a network administration tool for querying the Domain Name System (DNS) to obtain IP address mapping or any other DNS record. 
+example:
+	nslookup google.com
+	nslookup 192.168.0.10
+
+chmod 
+  - chmod command is used to change the access mode of a file. 
+  - The name is an abbreviation of change mode.
+
+  example: 1. Read, write and execute permissions to the file owner: 
+              chmod u+rwx <file_name>    
+                (OR)
+            chmod 700 <file_name>        
+        2. Read, write to file owner, Read to groups and Wrtie, Execute to Others: 
+              chmod u+rw, g+r, o+wx <file_name>    
+                (OR)
+            chmod 643 <file_name>
