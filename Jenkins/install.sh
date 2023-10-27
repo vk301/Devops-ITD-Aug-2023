@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "STEP_1 Update apt"
 	sudo apt update 
 
