@@ -5,7 +5,7 @@ echo -e "\n---------------------------- STEP_1 Update apt ----------------------
 
 echo -e "\n---------------------------- STEP_2: Install Java .... ----------------------------\n"
 	sleep 4
-	sudo apt install fontconfig openjdk-17-jre
+	sudo apt install -y fontconfig openjdk-17-jre 
 
 echo -e "\n---------------------------- STEP_3 Add Jenkins to apt list ----------------------------\n" 
 	sleep 4
@@ -15,7 +15,7 @@ echo -e "\n---------------------------- STEP_3 Add Jenkins to apt list ---------
 
 echo -e "\n---------------------------- STEP_4 Install Jenkins ----------------------------\n"
 	sleep 4
- 	sudo apt install jenkins
+ 	sudo apt install -y jenkins 
 
 echo -e "\n ---------------------------- STEP_5 Check Jenkins service status ----------------------------\n"
 	sudo systemctl status jenkins 
