@@ -1,4 +1,17 @@
 #!/bin/bash
+
+usage() {
+echo "
+Usage: $0 
+This will install Java and Jenkins only in Ubuntu 
+Mandatory arguments to long options are mandatory for short options too.
+  -h, --help                  Display usage of the script.
+"
+}
+
+[[ "$0" == '-h' ]] && usage 
+[[ "$0" == '--help' ]] && usage 
+
 echo -e "\n---------------------------- STEP_1 Update apt ----------------------------\n"
 	sleep 4
 	sudo apt update 
