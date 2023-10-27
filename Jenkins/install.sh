@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This will install Java and Jenkins only in Ubuntu 
+# To install directly in any ubuntu ec2, run below command 
+#   curl -s https://raw.githubusercontent.com/jaintpharsha/Devops-ITD-Aug-2023/main/Jenkins/install.sh | bash 
+
 usage() {
 echo "
 Usage: $0 
@@ -9,8 +13,8 @@ Mandatory arguments to long options are mandatory for short options too.
 "
 }
 
-[[ "$0" == '-h' ]] && usage 
-[[ "$0" == '--help' ]] && usage 
+[[ "$1" == '-h' ]] && usage 
+[[ "$1" == '--help' ]] && usage 
 
 echo -e "\n---------------------------- STEP_1 Update apt ----------------------------\n"
 	sleep 4
