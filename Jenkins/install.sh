@@ -15,9 +15,11 @@ echo "STEP_3 Add Jenkins to apt list"
 echo "STEP_4 Install Jenkins"
 	sudo apt install jenkins
 
-echo "STEP_5 Start Jenkins to apt list"
-	sudo systemctl start jenkins 
+echo "STEP_5 Check Jenkins service status"
+	sudo systemctl status jenkins 
 
-echo "STEP_6 Get inital admin password"
-sudo cat 
+echo "STEP_6: Open default port of jeknins 8080 & secondary port 50000 in ec2 SG"
+
+echo "STEP_7 Get Initial Admin Password"
+	sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
