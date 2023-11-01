@@ -10,8 +10,7 @@ pipeline {
         steps {
           sh """
                 pwd
-                cd /home/ubuntu
-                python3 test.py
+                ls -lrt
           """
         }  
     }  
