@@ -1,17 +1,20 @@
 pipeline {
-  agent any
+  agent none
   environment {
       TEST = 'this test env'
       TEST1 = 'this test1 env'
   }  
   stages {
     stage('STAGE 1'){
+        agent { label 'master' }
         steps {
-          sh "echo $TEST"
-          echo "${TEST1}"
+          sh """
+                python3 test.py
+          """
         }  
     }  
     stage('STAGE 2'){
+        agent any
         steps {  
           echo "${TEST}"
           sh "echo $TEST1"
