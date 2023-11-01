@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  environment {
+      TEST = 'this test env'
+  }  
+  stages {
+    stage('STAGE 1'){
+        steps {
+          sh "echo $TEST"
+        }  
+    }  
+    stage('STAGE 2'){
+        steps {  
+          echo $TEST
+        }  
+    }  
+  }  
+}
+  
