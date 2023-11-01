@@ -9,7 +9,9 @@ pipeline {
         agent { label 'master' }
         steps {
           sh """
-                python3 /home/ubuntu/test.py
+                pwd
+                cd /home/ubuntu
+                python3 test.py
           """
         }  
     }  
