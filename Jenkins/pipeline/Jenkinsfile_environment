@@ -2,16 +2,19 @@ pipeline {
   agent any
   environment {
       TEST = 'this test env'
+      TEST1 = 'this test1 env'
   }  
   stages {
     stage('STAGE 1'){
         steps {
           sh "echo $TEST"
+          echo "${TEST1}"
         }  
     }  
     stage('STAGE 2'){
         steps {  
           echo "${TEST}"
+          sh "echo $TEST1"
         }  
     }  
   }  
