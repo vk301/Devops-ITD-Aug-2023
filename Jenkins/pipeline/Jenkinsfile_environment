@@ -12,6 +12,7 @@ pipeline {
                 pwd
                 cd ./Jenkins/scripts
                 ls -lrt
+                python3 test.py 
           """
         }  
     }  
