@@ -37,10 +37,14 @@ pipeline {
         stage('DEPLOY_PROD') {
               when {  
                   expression { 
-                      params.ENV_NAME == 'PROD' 
+                      params.ENV_NAME == 'PROD' ||  
+                      params.ENV_NAME == 'PRODUCTION' ||  
+                      params.ENV_NAME == 'prod' ||
+                      params.ENV_NAME == 'production'
                   } 
               }
               steps {
+               
                     script {
                             echo "Deploying to PROD environment"
                     }
