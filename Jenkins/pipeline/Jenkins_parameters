@@ -15,9 +15,9 @@ pipeline {
         stage('DEPLOY') {
               steps {
                     script {
-                        if ( "${params.ENV_NAME}" == 'TEST') {
+                        if ("${params.ENV_NAME}" == 'TEST') {
                             echo "Deploying to TEST environment"
-                        } else if ("${params.ENV_NAME}" == 'PROD') {
+                        } else if ("${params.ENV_NAME}" == 'PROD' || "${params.ENV_NAME}" == 'PRODUCTION') {
                             echo "Deploying to PROD environment"
                         } else {
                             echo "No such environment"
