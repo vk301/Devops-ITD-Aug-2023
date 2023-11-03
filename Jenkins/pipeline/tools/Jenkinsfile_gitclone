@@ -1,0 +1,25 @@
+pipeline {
+    agent any 
+    stages {
+        stage('CHECKOUT') {
+             steps {
+                  git branch: 'main', 
+                      credentialsId: 'github_account', 
+                      url: 'https://github.com/jaintpharsha/test-august.git'
+                  sh '''
+                      pwd
+                      ls -lrt
+                  '''
+             }  
+        }  
+
+        stage('BUILD') {
+             steps {
+                  sh '''
+                      pwd
+                      ls -lrt
+                  '''
+             }  
+        }  
+    }  
+}  
