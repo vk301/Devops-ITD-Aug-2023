@@ -3,9 +3,17 @@ pipeline {
     stages {
         stage('CHECKOUT') {
              steps {
-                  git branch: 'main', 
-                      credentialsId: 'github_account', 
-                      url: 'https://github.com/jaintpharsha/test-august.git'
+                  // git branch: 'main', 
+                  //    credentialsId: 'github_account', 
+                  //    url: 'https://github.com/jaintpharsha/test-august.git'
+
+                  checkout([$class: 'GitSCM',
+                          branches: [[name: '*/main']],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [],
+                          submoduleCfg: [],
+                          userRemoteConfigs: [[url: 'https://github.com/jaintpharsha/test-august.git',
+                                              credentialsId: 'github_account']]])  
                   sh '''
                       pwd
                       ls -lrt
