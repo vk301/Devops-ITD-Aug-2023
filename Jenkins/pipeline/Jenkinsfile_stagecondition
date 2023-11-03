@@ -11,11 +11,13 @@ pipeline {
 
         stage('TEST') {
             steps {
-                try {
-                    echo "Running test cases in this stage ......"        
-                } catch (Exception e){
-                    echo "Test stage failed due to some error"
-                    testResult = false
+                script {
+                    try {
+                        echo "Running test cases in this stage ......"        
+                    } catch (Exception e){
+                        echo "Test stage failed due to some error"
+                        testResult = false
+                    }
                 }
             }
         }
