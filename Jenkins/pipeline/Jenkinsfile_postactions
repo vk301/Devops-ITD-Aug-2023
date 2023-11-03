@@ -1,9 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('CHECKOUT') {
             steps {
-                echo 'Hello World'
+                echo 'STEGE: CHECKOUT'
+            }
+        }
+
+        stage('BUILD') {
+            steps {
+                echo 'STEGE: BUILD'
+            }
+        }
+
+        stage('DEPLOY') {
+            steps {
+                echo 'STEGE: DEPLOY'
             }
         }
     }
