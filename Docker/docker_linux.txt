@@ -5,7 +5,7 @@ Docker
 	
 	Docker can only run on Linux machines this means I cant install Docker directly on Windows or any other OS.
 	If I want install Docker on windows then I need to run a Linux VM in windows on top that I need to run Docker.
-	
+
 host machine 
 	This is the machine in which docker is running 
 
@@ -146,7 +146,20 @@ Docker custom image / Dockerfile / Docker instructions
 			RUN ['<command>','<param1>','<param2>']	
 			RUN ['apt','update']	
 			RUN ['apt','install','-y','git']	
-			RUN ['ls','-lrt']		
+			RUN ['ls','-lrt']	
+
+	COPY and ADD 
+		Both copy and add instruction is used to copy files and directories from 
+		host machine build location to the image and the container created from it.
+	
+		ADD supports extra source formats 
+	  	  - If the source is a compressed file then ADD will automatically uncompress it 
+	    		in the destination.
+	      - If the source is a downloadable link then ADD will automatically download the 
+	        file in the destination.
+
+		COPY <source_path_from_build_context> <destination_inside_image>	  
+		ADD <source_path_from_build_context> <destination_inside_image>	 			
 
 	
 
