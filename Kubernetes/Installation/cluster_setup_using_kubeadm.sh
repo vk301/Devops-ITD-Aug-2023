@@ -85,12 +85,6 @@ EOF
 echo "--------------------------------------------------------------------------"
 echo "       Save the above kubeadm join <token> command to run on worker node"
 echo "--------------------------------------------------------------------------"
-echo -e "\n-------------------------- Setiing-up Kubeconfig  --------------------------\n"
-sleep 4
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-[[ -f "$HOME/.kube/config" ]] || echo "     Kubeconfig copied $HOME/.kube/config"
 
 echo -e "\n-------------------------- Copy the join <token> command --------------------------\n" 
 echo "    The join command must be executed in the worker node that we intend to add to the control-plane."
@@ -113,6 +107,12 @@ echo -e "\n\n  Wait to for 5-10 minutes, if node is still not in Ready state the
 echo "    1. kubectl apply -f https://docs.projectcalico.org/manifests/calico-typha.yaml"
 echo "    2. kubectl get nodes"
 echo -e "\n-----------------------------------------------------------------------------------"
+echo -e "\n-------------------------- Setiing-up Kubeconfig  --------------------------\n"
+sleep 4
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+[[ -f "$HOME/.kube/config" ]] || echo "     Kubeconfig copied $HOME/.kube/config"
 fi  
 
 if [[ "$1" == 'worker' ]]; then 
