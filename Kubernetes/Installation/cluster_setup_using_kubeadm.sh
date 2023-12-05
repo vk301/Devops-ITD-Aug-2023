@@ -93,6 +93,13 @@ echo "      2. If the join command is lost, we can generate it using bellow comm
 echo "            kubeadm token create --print-join-command"
 echo -e "\n-----------------------------------------------------------------------------------\n"
 
+echo -e "\n-------------------------- Setiing-up Kubectl config  --------------------------\n"
+sleep 4
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+[[ -f "$HOME/.kube/config" ]] || echo "     Kubeconfig copied $HOME/.kube/config"
+
 echo -e "\n-------------------------- Install weaveworks network cni --------------------------\n"
 #kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
@@ -107,12 +114,7 @@ echo -e "\n\n  Wait to for 5-10 minutes, if node is still not in Ready state the
 echo "    1. kubectl apply -f https://docs.projectcalico.org/manifests/calico-typha.yaml"
 echo "    2. kubectl get nodes"
 echo -e "\n-----------------------------------------------------------------------------------"
-echo -e "\n-------------------------- Setiing-up Kubeconfig  --------------------------\n"
-sleep 4
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-[[ -f "$HOME/.kube/config" ]] || echo "     Kubeconfig copied $HOME/.kube/config"
+
 fi  
 
 if [[ "$1" == 'worker' ]]; then 
