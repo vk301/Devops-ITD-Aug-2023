@@ -16,10 +16,9 @@ Kubernetes Installation using kops
 	5. Setup kubectl 
 		5a. set the store env variable 
 			export KOPS_STATE_STORE='s3://<bucket_name>'
-		5b. set kubectl context to cluster	
-			kubectl config set-context <cluster_name>
-			kubectl config set-context mycluster.k8s.local
-
+		5b. use kubectl context to cluster	
+			kubectl config use-context <cluster_name>
+			kubectl config use-context mycluster.k8s.local
 
 To delete cluster in kops 
 	1. List clusters 
